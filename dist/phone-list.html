@@ -1,0 +1,24 @@
+<template>
+  <virtual-list items.bind="objectArray">
+    <template replace-part="item-template">
+      <div class="contact-item">
+        <div class="avatar" css="background-color: ${item.color}" click.delegate="$parent.$parent.clickedItem(item, $index)">${item.firstLetter}</div>
+        <div class="name">
+          ${$index} ${item.name}
+        </div>
+        <div class="content">
+          <strong>Phone:</strong> ${item.phone} <br />
+          <strong>Country:</strong> ${item.country} <br />
+        </div>
+      </div>
+    </template>
+  </virtual-list>
+  <div class="array-actions">
+    <button class="btn btn-primary au-target" click.delegate="addItem()">Add 1</button>
+    <button class="btn btn-primary au-target" click.delegate="addItems(1000)">Add 1000</button>
+    <button class="btn btn-primary au-target" click.delegate="addItemFirst()">Add 1 at top</button>
+    <button class="btn btn-primary au-target" click.delegate="removeItems(1)">Remove 1 at top</button>
+  </div>
+
+
+</template>

@@ -2,5 +2,4 @@ node_modules
 bower_components
 .idea
 .DS_STORE
-/dist
 build/reports
